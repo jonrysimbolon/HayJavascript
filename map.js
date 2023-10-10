@@ -5,8 +5,9 @@ const myMap = new Map([
 ]);
 
 console.log(myMap); //Map(3) { '1' => 'a String key', 1 => 'a number key', true => true }
+console.log(myMap["Jogja"]); //undefined
 
-const capital = newMap([
+const capital = new Map([
   ["Jakarta", "Indonesia"],
   ["London", "England"],
   ["Tokyo", "Japan"],
