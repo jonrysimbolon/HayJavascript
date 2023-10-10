@@ -6,7 +6,7 @@ function scoreChecker(score) {
   } else if (score >= 80 && score <= 89) {
     result = "Anda mendapatkan nilai B.";
   } else if (score >= 70 && score <= 79) {
-    result = "Anda mendapatkan nilai D.";
+    result = "Anda mendapatkan nilai C.";
   } else if (score >= 60 && score <= 69) {
     result = "Anda mendapatkan nilai D.";
   } else {
@@ -16,4 +16,6 @@ function scoreChecker(score) {
   return result;
 }
 
-console.log(scoreChecker(80));
+for (let i = 50; i <= 100; i++) {
+  console.log(`${i} : ${scoreChecker(i)}`);
+}
