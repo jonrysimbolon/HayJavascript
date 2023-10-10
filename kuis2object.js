@@ -24,3 +24,18 @@
  */
 
 // Tulis kode di bawah ini
+
+// * (1)
+const restaurant = {
+    name:"Bakso Mang Dicoding",
+    city:"Bandung",
+    'favorite drink':"Es Teh",
+    'favorite food':"Bakso",
+    isVegan:false
+}
+
+// * (2)
+const name = restaurant.name
+
+// * (3)
+const favoriteDrink = restaurant["favorite drink"]
