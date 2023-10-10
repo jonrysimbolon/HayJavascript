@@ -13,7 +13,7 @@ function scoreChecker(score) {
     result = "Anda mendapatkan nilai E.";
   }
   // Jangan hapus kode ini
-  return result;
+  return result; 
 }
 
 for (let i = 50; i <= 100; i++) {
