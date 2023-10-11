@@ -6,19 +6,19 @@ function sayHello(greet){
 
 // ? Arrow typ1 1 
 
-const sayHello = (greet) => {
+const sayHello1 = (greet) => {
     console.log(`${greet}!`)
 }
 
 // ? Arrow type 2.1
 
-const sayHello = greet => { // kalo param cuma 1, bisa hilangkan kurungnya
+const sayHello21 = greet => { // kalo param cuma 1, bisa hilangkan kurungnya
     console.log(`${greet}!`)
 }
 
 // ? Arrow type 2.2
 
-const sayHello = () => { // jika tidak ada param
+const sayHello22 = () => { // jika tidak ada param
     console.log("Selamat pagi semuanya!")
 }
 
