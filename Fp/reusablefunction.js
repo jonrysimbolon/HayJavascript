@@ -87,10 +87,10 @@ output
 **/
 
 // ! array every
-const scores = [70,85,90];
+const scores = [70, 85, 90];
 const minimumScore = 65;
 
-const examPassed = scores.every(score => score >= minimumScore);
+const examPassed = scores.every((score) => score >= minimumScore);
 console.log(examPassed);
 
 /**
@@ -100,17 +100,17 @@ true
 
 // ! array foreach
 
-const names = ['Harry', 'Ron', 'Jeff', 'Thomas'];
- 
+const names = ["Harry", "Ron", "Jeff", "Thomas"];
+
 // ? Imperatif
-for(let i = 0; i < names.length; i++) {
-  if(names[i] === 'Jeff') continue; // Bisa!
-  
+for (let i = 0; i < names.length; i++) {
+  if (names[i] === "Jeff") continue; // Bisa!
+
   console.log(`Hello, ${names[i]}!`);
 }
- 
+
 // ? Deklaratif
-names.forEach((name) => {
+/*names.forEach((name) => {
   if(name === 'Jeff') continue; // Tidak Bisa!
   console.log(`Hello, ${name}`);
-});
+});*/
