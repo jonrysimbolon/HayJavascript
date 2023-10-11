@@ -47,3 +47,17 @@ console.log(someArray); // ['a', 'b', 'c', 'd']
 someArray.push('a');
 console.log(someArray); // ['a', 'b', 'c', 'd']
 
+
+
+/*
+
+! More ...
+
+*. Date
+*. Object
+*. Array
+*. Math
+*. String
+*. Number
+
+*/
