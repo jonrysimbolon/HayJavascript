@@ -6,13 +6,13 @@
     <title>Event World</title>
     <style>
       .contents {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: 2px solid black;
-        padding: 15px;
-      }
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid black;
+      padding: 15px;
+    }
 
       #generateButton {
         margin-top: 5px;
@@ -20,12 +20,12 @@
       }
     </style>
   </head>
-  <body>
+  <body onload="welcome()">
     <div class="contents" align="center" hidden>
       <button id="incrementButton">Press me :)</button>
       <h3>you have pressed the button <span id="count">0</span></h3>
     </div>
-    <script src="/app.js">
+    <script src="./app.js">
     </script>
   </body>
 </html>
