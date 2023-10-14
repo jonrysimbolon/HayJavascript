@@ -17,5 +17,6 @@ function increment() {
   }
 }
 
-//document.getElementById("incrementButton").onclick = increment;
-//document.body.onload = welcome;
+// kita akan menulis kode menggunakan addEventListener disini
+window.addEventListener("load", welcome);
+document.getElementById("incrementButton").addEventListener("click", increment);
