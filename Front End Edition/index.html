@@ -2,29 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Event World</title>
+    <title>Bubbling World</title>
     <style>
-      .buttons {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border: 2px solid black;
-        padding: 15px;
-      }
-
-      .button {
+      body div {
+        width: 60%;
         margin: 8px;
-        height: 40px;
+        padding: 5px;
+        border: 2px solid black;
       }
     </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="buttons" align="center">
-      <h3>Please press button on bottom</h3>
-      <button class="button" id="tombol">Tombol Custom Event</button>
+    <div onclick="alert('ELEMEN LANGIT')" align="center">
+      LANGIT
+      <div onclick="alert('ELEMEN LUAR')" align="center">
+        LUAR
+        <div onclick="alert('ELEMEN TENGAH')" align="center">
+          TENGAH
+          <div onclick="alert('ELEMEN DALAM')" align="center">DALAM</div>
+        </div>
+      </div>
     </div>
-    <script src="./app.js"></script>
   </body>
 </html>
