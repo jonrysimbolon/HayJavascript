@@ -1,25 +1,25 @@
-const localStorageKey = "PRESS_FREQUENCY";
+const sessionStorageKey = "PRESS_FREQUENCY";
 
 if (typeof Storage !== "undefined") {
-  if (localStorage.getItem(localStorageKey) === null) {
-    localStorage.setItem(localStorageKey, 0);
+  if (sessionStorage.getItem(sessionStorageKey) === null) {
+    sessionStorage.setItem(sessionStorageKey, 0);
   }
   const incrementButton = document.querySelector("#incrementButton");
   const clearButton = document.querySelector("#clear");
   const countDisplay = document.querySelector("#count");
 
-  countDisplay.innerText = localStorage.getItem(localStorageKey);
+  countDisplay.innerText = sessionStorage.getItem(sessionStorageKey);
 
   incrementButton.addEventListener("click", function () {
-    let count = localStorage.getItem(localStorageKey);
+    let count = sessionStorage.getItem(sessionStorageKey);
     count++;
-    localStorage.setItem(localStorageKey, count);
-    countDisplay.innerText = localStorage.getItem(localStorageKey);
+    sessionStorage.setItem(sessionStorageKey, count);
+    countDisplay.innerText = sessionStorage.getItem(sessionStorageKey);
   });
 
   // Memberikan nilai 0 ke tampilan karena di-reset dan menghapus item
   clearButton.addEventListener("click", function () {
-    localStorage.removeItem(localStorageKey);
+    sessionStorage.removeItem(sessionStorageKey);
     countDisplay.innerText = 0;
   });
 } else {
