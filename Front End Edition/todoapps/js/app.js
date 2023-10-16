@@ -13,11 +13,13 @@ document.addEventListener(RENDER_EVENT, function () {
   const uncompletedTODOList = document.getElementById("todos");
   uncompletedTODOList.innerHTML = "";
 
+  const completedTODOList = document.getElementById("completed-todos");
+  completedTODOList.innerHTML = "";
+
   for (const todoItem of todos) {
     const todoElement = makeTodo(todoItem);
-    if (!todoItem.isCompleted) {
-      uncompletedTODOList.append(todoElement);
-    }
+    if (!todoItem.isCompleted) uncompletedTODOList.append(todoElement);
+    else completedTODOList.append(todoElement);
   }
 });
 
@@ -46,23 +48,20 @@ function generateTodoObject(id, task, timeStamp, isCompleted) {
 }
 
 function makeTodo(todoObject) {
-  const textTitle = document.createElement('h2');
+  const textTitle = document.createElement("h2");
   textTitle.innerText = todoObject.task;
- 
-  const textTimestamp = document.createElement('p');
-  textTimestamp.innerText = todoObject.timeStamp;
- 
-  const textContainer = document.createElement('div');
-  textContainer.classList.add('inner');
-  textContainer.append(textTitle, textTimestamp);
- 
-  const container = document.createElement('div');
-  container.classList.add('item', 'shadow');
-  container.append(textContainer);
-  container.setAttribute('id', `todo-${todoObject.id}`);
 
-  console.log(todoObject);
-  console.log(textContainer)
+  const textTimestamp = document.createElement("p");
+  textTimestamp.innerText = todoObject.timeStamp;
+
+  const textContainer = document.createElement("div");
+  textContainer.classList.add("inner");
+  textContainer.append(textTitle, textTimestamp);
+
+  const container = document.createElement("div");
+  container.classList.add("item", "shadow");
+  container.append(textContainer);
+  container.setAttribute("id", `todo-${todoObject.id}`);
 
   if (todoObject.isCompleted) {
     const undoButton = document.createElement("button");
@@ -110,4 +109,31 @@ function findTodo(todoId) {
     }
   }
   return null;
+}
+
+function removeTaskFromCompleted(todoId){
+    const todoTarget = findTodoIndex(todoId)
+    
+    if(todoTarget === -1) return
+
+    todos.splice(todoTarget, 1)
+    document.dispatchEvent(new Event(RENDER_EVENT))
+}
+
+function undoTaskFromCompleted(todoId){
+    const todoTarget = findTodo(todoId)
+
+    if(todoTarget == null) return
+
+    todoTarget.isCompleted = false
+    document.dispatchEvent(new Event(RENDER_EVENT))
+}
+
+function findTodoIndex(todoId){
+    for (const index in todos){
+        if(todos[index].id === todoId){
+            return index
+        }
+    }
+    return -1;
 }
