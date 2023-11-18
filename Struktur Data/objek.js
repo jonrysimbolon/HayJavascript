@@ -12,6 +12,6 @@ console.log(user["bahasa pemrograman"])
 user["bahasa pemrograman"] = 'Node'
 user["programmer kah ?"] = true
 
-delete user.age
+delete user.age // delete user["age"]
 
 console.log(user)
